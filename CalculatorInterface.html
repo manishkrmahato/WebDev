@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #eef2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        header {
+            margin-bottom: 20px;
+        }
+
+        .heading {
+            font-size: 2.5em;
+            color: #4A4A4A;
+            text-align: center;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .calculator {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .calculator:hover {
+            transform: translateY(-10px);
+        }
+
+        .display {
+            margin-bottom: 20px;
+        }
+
+        .output {
+            width: 100%;
+            padding: 20px;
+            font-size: 2.5em;
+            text-align: right;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            color: #333;
+            outline: none;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .button {
+            padding: 20px;
+            font-size: 1.6em;
+            border-radius: 10px;
+            border: 2px solid #ccc;
+            background-color: #f1f1f1;
+            color: #333;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            text-align: center;
+        }
+
+        .button:hover,
+        .button:focus {
+            background-color: #e0e0e0;
+            outline: none;
+            transform: translateY(-3px);
+        }
+
+        .operator {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .operator:hover {
+            background-color: #45a049;
+        }
+
+        #clear {
+            background-color: #f44336;
+            color: white;
+        }
+
+        #clear:hover {
+            background-color: #e53935;
+        }
+
+        .button:active {
+            transform: translateY(2px);
+        }
+
+        @media screen and (max-width: 600px) {
+            .calculator {
+                width: 90%;
+                padding: 15px;
+            }
+
+            .output {
+                font-size: 2em;
+            }
+
+            .button {
+                font-size: 1.4em;
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="heading">Calculator</h1>
+    </header>
+
+    <div class="calculator">
+        <div class="display">
+            <input type="text" class="output" disabled id="output">
+        </div>
+
+        <div class="buttons">
+            <button class="button" onclick="appendValue(7)">7</button>
+            <button class="button" onclick="appendValue(8)">8</button>
+            <button class="button" onclick="appendValue(9)">9</button>
+            <button class="button operator" onclick="appendValue('/')">/</button>
+
+            <button class="button" onclick="appendValue(4)">4</button>
+            <button class="button" onclick="appendValue(5)">5</button>
+            <button class="button" onclick="appendValue(6)">6</button>
+            <button class="button operator" onclick="appendValue('*')">*</button>
+
+            <button class="button" onclick="appendValue(1)">1</button>
+            <button class="button" onclick="appendValue(2)">2</button>
+            <button class="button" onclick="appendValue(3)">3</button>
+            <button class="button operator" onclick="appendValue('-')">-</button>
+
+            <button class="button" onclick="appendValue(0)">0</button>
+            <button class="button" onclick="appendValue('.')">.</button>
+            <button class="button operator" onclick="appendValue('+')">+</button>
+            <button class="button operator" onclick="calculateResult()">=</button>
+
+            <button class="button operator" id="clear" onclick="clearOutput()">C</button>
+        </div>
+    </div>
+
+    <script>
+        function appendValue(value) {
+            document.getElementById('output').value += value;
+        }
+
+        function calculateResult() {
+            try {
+                const result = eval(document.getElementById('output').value);
+                document.getElementById('output').value = result;
+            } catch (error) {
+                document.getElementById('output').value = 'Error';
+            }
+        }
+
+        function clearOutput() {
+            document.getElementById('output').value = '';
+        }
+    </script>
+</body>
+</html>
