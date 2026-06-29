@@ -8,8 +8,8 @@ A structured collection of web development lab projects built during coursework 
 
 ### 🎬 MoviesWebApp
 A dynamic web application for browsing and displaying movie information.
-- Built with **HTML, CSS, JavaScript, and PHP**
-- Full-stack architecture with a PHP backend
+- Built with **HTML, CSS, JavaScript**
+- Full-stack architecture
 - Responsive UI for browsing movie listings
 
 ![MoviesWebApp Preview](preview/movie-preview.png)
@@ -31,7 +31,6 @@ An interactive, browser-based calculator with a clean UI.
 | HTML5 | Page structure and semantics |
 | CSS3 | Styling and responsive layout |
 | JavaScript | Client-side interactivity |
-| PHP | Server-side logic (MoviesWebApp) |
 
 ---
 
@@ -50,11 +49,11 @@ cd WebDev
 # Open CalculatorInterface.html directly in your browser
 ```
 
-**MoviesWebApp (requires PHP server):**
+**MoviesWebApp (no server needed):**
 ```bash
-# Place the project folder in your XAMPP/htdocs directory
-# Start Apache from the XAMPP control panel
-# Visit: http://localhost/WebDev/MoviesWebApp/
+git clone https://github.com/manishkrmahato/WebDev.git
+cd WebDev
+# Open index.html directly in your browser
 ```
 
 ---
