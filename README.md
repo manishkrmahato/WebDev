@@ -60,7 +60,7 @@ cd WebDev
 ```
 WebDev/
 ├── MoviesWebApp/          # Full-stack movie browsing app
-│   └── ...
+│   └── index.html | style.css | app.js
 ├── CalculatorInterface.html  # Standalone calculator UI
 ├── index.php              # Entry point
 └── README.md
