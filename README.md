@@ -12,11 +12,15 @@ A dynamic web application for browsing and displaying movie information.
 - Full-stack architecture with a PHP backend
 - Responsive UI for browsing movie listings
 
+![MoviesWebApp Preview](preview/movie-preview.png)
+
 ### 🧮 Calculator Interface
 An interactive, browser-based calculator with a clean UI.
 - Built with pure **HTML, CSS, and JavaScript**
 - Handles standard arithmetic operations
 - Responsive layout with keyboard-friendly design
+
+![Calculator Preview](preview/calculator-preview.png)
 
 ---
 
@@ -59,10 +63,13 @@ cd WebDev
 
 ```
 WebDev/
-├── MoviesWebApp/          # Full-stack movie browsing app
-│   └── index.html | style.css | app.js
+├── MoviesWebApp/             # Full-stack movie browsing app
+│   └──style.css | index.html | app.js
+├── preview/                  # Screenshots for README
+│   ├── calculator-preview.png
+│   └── movie-preview.png
 ├── CalculatorInterface.html  # Standalone calculator UI
-├── index.php              # Entry point
+├── index.php                 # Entry point
 └── README.md
 ```
 
